@@ -33,7 +33,7 @@ int main() {
 
     srand((unsigned)time(NULL));
 
-    for (int position = 0; position <= MaxCharacters; position++) {
+    for (int position = 0; position < MaxCharacters; position++) {
         
         password[position] = PassWordRange();
     }
@@ -65,7 +65,7 @@ int main() {
         else if (password[position] >= '`' && password[position] <= '`') {
             SpecialCharacters++;
         }
-        else if (password[position] >= '`' && password[position] <= '{') {
+        else {
             SpecialCharacters++;
         }
         
@@ -78,13 +78,13 @@ int main() {
     if (DemandsLowerCase && LowerCase == 0) {
         ValidPassword = 0;
     }
-    if (DemandsUpperCase && UpperCase == 0) {
+    else if (DemandsUpperCase && UpperCase == 0) {
         ValidPassword = 0;
     }
-    if (DemandsNumbers && Numbers == 0) {
+    else if (DemandsNumbers && Numbers == 0) {
         ValidPassword = 0;
     }
-    if (DemandsSpecialCharacters && SpecialCharacters == 0) {
+    else {
         ValidPassword = 0;
     }
 
